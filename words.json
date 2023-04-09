@@ -1,0 +1,22 @@
+{
+"items": [
+{
+  "question": "What is Array?",
+  "phrase": "Array is collection of order elements",
+  "answers": [
+       {"answer": "text", "is_correct": "false"},
+       {"answer": "text", "is_correct": "false"}, 
+       {"answer": "text", "is_correct": "false"}
+   ]
+},
+{
+  "question": "What is Array?",
+  "phrase": "Array is collection of order elements",
+  "answers": [
+       {"answer": "text", "is_correct": "false"},
+       {"answer": "text", "is_correct": "false"}, 
+       {"answer": "text", "is_correct": "false"}
+   ]
+}]
+}
+ 
