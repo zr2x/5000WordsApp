@@ -11,11 +11,9 @@ import SnapKit
 
 class MainViewController: UIViewController{
     
-    
     let questionService = QuestionService()
-    
     var currentWord: WordModel?
-    
+    let defaults = UserDefaults.standard
     
     //Configure UI Control
     
@@ -23,9 +21,8 @@ class MainViewController: UIViewController{
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 16
-        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
-        stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10)
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
     }()
@@ -33,7 +30,6 @@ class MainViewController: UIViewController{
     let questionStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.backgroundColor = .orange
         stack.layer.cornerRadius = 10
         stack.clipsToBounds = true
@@ -53,14 +49,12 @@ class MainViewController: UIViewController{
         label.text = "current progress"
         label.textColor = .blue
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return label
     }()
     
     private let progressView: UIProgressView = {
         let progressView = UIProgressView()
-        progressView.translatesAutoresizingMaskIntoConstraints = false
         progressView.progress = 0.33
         progressView.progressTintColor = .blue
         progressView.heightAnchor.constraint(equalToConstant: 3).isActive = true
@@ -73,7 +67,6 @@ class MainViewController: UIViewController{
         label.textColor = .blue
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -104,9 +97,6 @@ class MainViewController: UIViewController{
         questionService.fetchQuestions(jsonName: "words")
         currentWord = questionService.nextQuestion()
         updateViews()
-        
-        
-        
     }
     
     //MARK: Configure View Hierarchy
@@ -131,10 +121,7 @@ class MainViewController: UIViewController{
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(questionStackView)
         mainStackView.addArrangedSubview(answerStackView)
-        
         questionStackView.addArrangedSubview(progressLabel)
-        
-//        questionStackView.addArrangedSubview(backToMenuButton)
         questionStackView.addArrangedSubview(progressView)
         questionStackView.addArrangedSubview(nameLabel)
         questionStackView.addArrangedSubview(phraseLabel)
@@ -176,12 +163,16 @@ class MainViewController: UIViewController{
         }
 
         var correct = currentWord?.correct
-        
+
         if sender.currentTitle == correct {
             sender.backgroundColor = .green
-          
+            //FIXME: force unwrap
+            questionService.correctAnswers.append(sender.currentTitle ?? "")
+            defaults.set(questionService.correctAnswers, forKey: "correct")
         } else {
             sender.backgroundColor = .red
+            questionService.wrongAnswers.append(sender.currentTitle ?? "")
+            defaults.set(questionService.wrongAnswers, forKey: "wrong")
           
         }
         
@@ -189,8 +180,6 @@ class MainViewController: UIViewController{
             self.currentWord = self.questionService.nextQuestion()
             self.updateViews()
         }
-        
-        
     }
     
     func back(sender: UIButton) {

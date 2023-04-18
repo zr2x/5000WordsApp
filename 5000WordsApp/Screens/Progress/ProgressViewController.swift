@@ -7,76 +7,76 @@
 
 import UIKit
 
-class ProgressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
-    let menuArray = ["Правильно", "Неверно"]
+class ProgressViewController: UIViewController {
     
-    let questionService = QuestionService()
-    
-    private lazy var segmentedControl: UISegmentedControl = {
-        let segment = UISegmentedControl(items: menuArray.self)
-        segment.frame = CGRect(x: 100, y: 60, width: 200, height: 30)
-        return segment
-    }()
-    
+    let menuArray = ["Все", "Правильно", "Неверно"]
     var words = [Word]()
     
-    lazy var tableView: UITableView = {
+    let questionService = QuestionService()
+    let wordsArchiver = WordsArchiver()
+    
+    let segmentComponentView = SegmentComponentView()
+    
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.frame = view.bounds
         tableView.backgroundColor = .lightGray
+        tableView.register(WordCell.self, forCellReuseIdentifier: WordCell.reuseId)
+        tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureTableVIew()
-        view.addSubview(segmentedControl)
-        handleSegmentControl()
+        setupViews()
+        setupConstraints()
         
         questionService.fetchQuestions(jsonName: "words")
         words = questionService.allWords.shuffled()
         //tableView.reloadData()
     }
     
-    private func configureTableVIew() {
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifire)
+    private func setupViews() {
         view.addSubview(tableView)
-        tableView.dataSource = self
-        tableView.delegate = self
+        view.addSubview(segmentComponentView)
     }
     
-    private func handleSegmentControl() {
-        segmentedControl.addTarget(self, action: #selector(changeVC(target:)), for: .valueChanged)
+    private func setupConstraints() {
+        
+        segmentComponentView.snp.makeConstraints { make in
+            make.top.left.right.equalTo(view)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(segmentComponentView.snp.bottom)
+            make.left.right.bottom.equalTo(view)
+        }
+        
     }
     
-    @objc private func changeVC(target: UISegmentedControl) {
-//        if target == segmentedControl {
-//            let newVC = UIViewController()
-//            newVC.view.backgroundColor = .yellow
-//            present(newVC, animated: true)
-//        }
+    //MARK: - Actions
+    @objc private func segmentChangedAction(target: UISegmentedControl) {
+
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
+}
+
+extension ProgressViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return words.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifire, for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WordCell.reuseId, for: indexPath) as? WordCell else { return UITableViewCell() }
         
         cell.backgroundColor = .lightGray
-        let path = words[indexPath.row]
-        cell.textLabel?.text = path.word
         
+        let word = words[indexPath.row]
+        cell.update(word)
         return cell
     }
+}
+    
     
 
-
-}

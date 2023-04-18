@@ -18,11 +18,14 @@
 		C02973EF299B74BB0089526E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02973EE299B74BB0089526E /* CategoryCell.swift */; };
 		C044484329DC21B20004F2CF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C044484229DC21B20004F2CF /* MainTabBarController.swift */; };
 		C050EA7329DB049000568FB0 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050EA7229DB049000568FB0 /* ProgressViewController.swift */; };
-		C050EA7529DB1F0E00568FB0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050EA7429DB1F0E00568FB0 /* CustomTableViewCell.swift */; };
+		C050EA7529DB1F0E00568FB0 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050EA7429DB1F0E00568FB0 /* WordCell.swift */; };
+		C0589D4629E44A5F007E995E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0589D4529E44A5F007E995E /* MenuViewController.swift */; };
+		C0589D4B29E5484B007E995E /* WordArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0589D4A29E5484B007E995E /* WordArchiver.swift */; };
 		C0BDEE8A29AF751A0083B8BD /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDEE8929AF751A0083B8BD /* JsonLoader.swift */; };
 		C0BDEE8E29AF75980083B8BD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDEE8D29AF75980083B8BD /* Model.swift */; };
 		C0BDEE9029AF76AC0083B8BD /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = C0BDEE8F29AF76AC0083B8BD /* words.json */; };
 		C0BDEE9729B723B80083B8BD /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDEE9629B723B80083B8BD /* QuestionService.swift */; };
+		C0D4E74729E55529009134DD /* SegmentComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4E74629E55529009134DD /* SegmentComponentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,11 +41,14 @@
 		C02973EE299B74BB0089526E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		C044484229DC21B20004F2CF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C050EA7229DB049000568FB0 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
-		C050EA7429DB1F0E00568FB0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C050EA7429DB1F0E00568FB0 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
+		C0589D4529E44A5F007E995E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C0589D4A29E5484B007E995E /* WordArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordArchiver.swift; sourceTree = "<group>"; };
 		C0BDEE8929AF751A0083B8BD /* JsonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
 		C0BDEE8D29AF75980083B8BD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C0BDEE8F29AF76AC0083B8BD /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		C0BDEE9629B723B80083B8BD /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		C0D4E74629E55529009134DD /* SegmentComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentComponentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +91,20 @@
 			path = 5000WordsApp;
 			sourceTree = "<group>";
 		};
+		C0589D4929E44AF7007E995E /* MenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0589D4529E44A5F007E995E /* MenuViewController.swift */,
+			);
+			path = MenuVC;
+			sourceTree = "<group>";
+		};
 		C0663ADC29D9CC0E006517C6 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
 				C050EA7229DB049000568FB0 /* ProgressViewController.swift */,
-				C050EA7429DB1F0E00568FB0 /* CustomTableViewCell.swift */,
+				C0D4E74629E55529009134DD /* SegmentComponentView.swift */,
+				C050EA7429DB1F0E00568FB0 /* WordCell.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -109,6 +124,7 @@
 				C0663ADC29D9CC0E006517C6 /* Progress */,
 				C0BDEE9829C304110083B8BD /* Category */,
 				C0BDEE9929C3042A0083B8BD /* MainVC */,
+				C0589D4929E44AF7007E995E /* MenuVC */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -118,6 +134,7 @@
 			children = (
 				C0BDEE8929AF751A0083B8BD /* JsonLoader.swift */,
 				C0BDEE9629B723B80083B8BD /* QuestionService.swift */,
+				C0589D4A29E5484B007E995E /* WordArchiver.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -241,11 +258,14 @@
 				C0BDEE8E29AF75980083B8BD /* Model.swift in Sources */,
 				C0BDEE9729B723B80083B8BD /* QuestionService.swift in Sources */,
 				C044484329DC21B20004F2CF /* MainTabBarController.swift in Sources */,
+				C0D4E74729E55529009134DD /* SegmentComponentView.swift in Sources */,
 				C02973ED299B73A40089526E /* CategoryViewController.swift in Sources */,
 				C02973D5299B61990089526E /* MainViewController.swift in Sources */,
 				C02973D1299B61990089526E /* AppDelegate.swift in Sources */,
 				C02973D3299B61990089526E /* SceneDelegate.swift in Sources */,
-				C050EA7529DB1F0E00568FB0 /* CustomTableViewCell.swift in Sources */,
+				C0589D4B29E5484B007E995E /* WordArchiver.swift in Sources */,
+				C0589D4629E44A5F007E995E /* MenuViewController.swift in Sources */,
+				C050EA7529DB1F0E00568FB0 /* WordCell.swift in Sources */,
 				C050EA7329DB049000568FB0 /* ProgressViewController.swift in Sources */,
 				C0BDEE8A29AF751A0083B8BD /* JsonLoader.swift in Sources */,
 				C02973EF299B74BB0089526E /* CategoryCell.swift in Sources */,

@@ -9,15 +9,13 @@ import UIKit
 
 class CategoryViewController: UIViewController {
     
-//    private let groupSection = ["Основы","Многопоточность","Networking"]
-    
     private let itemsInfoArray = [["20 случайных", "50 случайных", "все вопросы"], ["Массивы", "Словарь"], ["Функции"]]
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .lightGray
         
-        tableView.register(CategoryCell.self, forCellReuseIdentifier: CategoryCell.reusedId)
+        tableView.register(CategoryCell.self, forCellReuseIdentifier: CategoryCell.reuseId)
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "header")
         tableView.delegate = self
         tableView.dataSource = self
@@ -52,15 +50,12 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        //let items = itemsInfoArray[section]
-        
         return itemsInfoArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryCell.reusedId, for: indexPath) as? CategoryCell else { return UITableViewCell.init() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryCell.reuseId, for: indexPath) as? CategoryCell else { return UITableViewCell.init() }
         
         
         let items = itemsInfoArray[indexPath.row]
@@ -69,15 +64,4 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
         //        cell.textLabel?.text = itemsInfoArray[indexPath.row]
         return cell
     }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") ?? UITableViewHeaderFooterView()
-////        header.textLabel?.text = groupSection[section]
-//        header.contentView.backgroundColor = .white
-//        return header
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 25
-//    }
 }

@@ -11,6 +11,8 @@ class QuestionService {
     var allWords: [Word] = []
     var currentWord: WordModel?
     private var jsonLoader = JsonLoader()
+    var correctAnswers: [String] = []
+    var wrongAnswers: [String] = []
 
     func fetchQuestions(jsonName: String)  {
         allWords = jsonLoader.loadJson(filename: jsonName) ?? []

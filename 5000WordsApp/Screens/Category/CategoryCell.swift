@@ -9,10 +9,8 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
     
-    static let reusedId = "CategoryCell"
-    
-  
-    
+    static let reuseId = "CategoryCell"
+
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -21,7 +19,6 @@ class CategoryCell: UITableViewCell {
         stackView.distribution = .fillProportionally
         return stackView
     }()
-    //stackView
     
     lazy var categoryLabel: UILabel = {
         let label = UILabel()
@@ -55,9 +52,7 @@ class CategoryCell: UITableViewCell {
     
     
     func update(categories: [String]) {
-        //создаешь на основе элементов массива кнопки и кладешь в стэквью
-        //        var categoryButtons = [UIButton]()
-        
+
         let _ = categories.map { buttonInfo -> UIButton in
             let button = UIButton()
             button.setTitle(buttonInfo, for: .normal)
