@@ -8,12 +8,15 @@
 import UIKit
 
 class SegmentComponentView: UIView {
-    let menuArray = ["Все", "Правильно", "Неверно"]
+    
+    var onAction: ((Int)->Void)?
+    
+    let menuArray = ["Все слова", "Не знаю", "Знаю"]
     
     lazy var segment: UISegmentedControl = {
         let segment = UISegmentedControl.init(items: menuArray)
-        segment.addTarget(self, action: #selector(segmentChanged(target:)), for: .valueChanged)
-
+        segment.addTarget(self, action: #selector(segmentChanged(sender:)), for: .valueChanged)
+        segment.layer.cornerRadius = 30
         return segment
     }()
     
@@ -38,7 +41,8 @@ class SegmentComponentView: UIView {
         }
     }
     
-    @objc private func segmentChanged(target: UISegmentedControl) {
+    @objc private func segmentChanged(sender: UISegmentedControl) {
 
+        onAction?(sender.selectedSegmentIndex)
     }
 }

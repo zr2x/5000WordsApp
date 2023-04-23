@@ -9,11 +9,12 @@ import UIKit
 
 class ProgressViewController: UIViewController {
     
-    let menuArray = ["Все", "Правильно", "Неверно"]
-    var words = [Word]()
-    
+    var words = [WordModel]()
     let questionService = QuestionService()
-    let wordsArchiver = WordsArchiver()
+    let wordsArchiver = WordsArchiver(type: .all)
+    let knownArchiver = WordsArchiver(type: .known)
+    let unknownArchiver = WordsArchiver(type: .unknown)
+
     
     let segmentComponentView = SegmentComponentView()
     
@@ -32,8 +33,25 @@ class ProgressViewController: UIViewController {
         setupViews()
         setupConstraints()
         
+        
+        segmentComponentView.onAction = { segmentIndex in
+            
+            switch segmentIndex {
+            case 0:
+                self.words = self.wordsArchiver.retrieve()
+            case 1:
+                self.words = self.unknownArchiver.retrieve()
+            case 2:
+                self.words = self.knownArchiver.retrieve()
+            default: break
+            }
+            
+            self.tableView.reloadData()
+        }
+        
+        
         questionService.fetchQuestions(jsonName: "words")
-        words = questionService.allWords.shuffled()
+        //words = questionService.allWords.shuffled()
         //tableView.reloadData()
     }
     
@@ -54,11 +72,7 @@ class ProgressViewController: UIViewController {
         }
         
     }
-    
-    //MARK: - Actions
-    @objc private func segmentChangedAction(target: UISegmentedControl) {
 
-    }
 }
 
 extension ProgressViewController: UITableViewDataSource, UITableViewDelegate {

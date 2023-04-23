@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C02973D1299B61990089526E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02973D0299B61990089526E /* AppDelegate.swift */; };
 		C02973D3299B61990089526E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02973D2299B61990089526E /* SceneDelegate.swift */; };
-		C02973D5299B61990089526E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02973D4299B61990089526E /* MainViewController.swift */; };
+		C02973D5299B61990089526E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02973D4299B61990089526E /* GameViewController.swift */; };
 		C02973D8299B61990089526E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02973D6299B61990089526E /* Main.storyboard */; };
 		C02973DA299B619A0089526E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C02973D9299B619A0089526E /* Assets.xcassets */; };
 		C02973DD299B619A0089526E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02973DB299B619A0089526E /* LaunchScreen.storyboard */; };
@@ -32,7 +32,7 @@
 		C02973CD299B61990089526E /* 5000WordsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5000WordsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02973D0299B61990089526E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C02973D2299B61990089526E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C02973D4299B61990089526E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C02973D4299B61990089526E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C02973D7299B61990089526E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C02973D9299B619A0089526E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C02973DC299B619A0089526E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,12 +91,12 @@
 			path = 5000WordsApp;
 			sourceTree = "<group>";
 		};
-		C0589D4929E44AF7007E995E /* MenuVC */ = {
+		C0589D4929E44AF7007E995E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				C0589D4529E44A5F007E995E /* MenuViewController.swift */,
 			);
-			path = MenuVC;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		C0663ADC29D9CC0E006517C6 /* Progress */ = {
@@ -123,8 +123,8 @@
 			children = (
 				C0663ADC29D9CC0E006517C6 /* Progress */,
 				C0BDEE9829C304110083B8BD /* Category */,
-				C0BDEE9929C3042A0083B8BD /* MainVC */,
-				C0589D4929E44AF7007E995E /* MenuVC */,
+				C0BDEE9929C3042A0083B8BD /* Game */,
+				C0589D4929E44AF7007E995E /* Menu */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -168,13 +168,13 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		C0BDEE9929C3042A0083B8BD /* MainVC */ = {
+		C0BDEE9929C3042A0083B8BD /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				C02973D4299B61990089526E /* MainViewController.swift */,
+				C02973D4299B61990089526E /* GameViewController.swift */,
 				C044484229DC21B20004F2CF /* MainTabBarController.swift */,
 			);
-			path = MainVC;
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +260,7 @@
 				C044484329DC21B20004F2CF /* MainTabBarController.swift in Sources */,
 				C0D4E74729E55529009134DD /* SegmentComponentView.swift in Sources */,
 				C02973ED299B73A40089526E /* CategoryViewController.swift in Sources */,
-				C02973D5299B61990089526E /* MainViewController.swift in Sources */,
+				C02973D5299B61990089526E /* GameViewController.swift in Sources */,
 				C02973D1299B61990089526E /* AppDelegate.swift in Sources */,
 				C02973D3299B61990089526E /* SceneDelegate.swift in Sources */,
 				C0589D4B29E5484B007E995E /* WordArchiver.swift in Sources */,

@@ -42,7 +42,7 @@ final class WordCell: UITableViewCell {
     
     //MARK: - Public
     ///Передача слова в ячейку
-    func update(_ word: Word) {
+    func update(_ word: WordModel) {
         wordLabel.text = word.word
     }
 }

@@ -9,8 +9,8 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
-    private var menuVC: MainViewController = {
-       let controller = MainViewController()
+    private var menuVC: GameViewController = {
+       let controller = GameViewController()
        let image = UIImage(systemName: "book.closed")
        let selectedImage = UIImage(systemName: "book.closed")
        let tabItem = UITabBarItem.init(title: "Меню", image: image, selectedImage: selectedImage)

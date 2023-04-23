@@ -7,15 +7,33 @@
 
 import Foundation
 
+enum WordType: String {
+    case all
+    case known
+    case unknown
+}
+
 final class WordsArchiver {
     
     private let encoder = JSONEncoder() //кодирует в бинарник
     private let decoder = JSONDecoder() //разкодирует
+
+    private var key: String
     
-    private let key = "Words"
+    init(type: WordType) {
+        self.key = type.rawValue
+    }
     
-    //MARK: - Public 
-    func save(_ words: [Word]) { //метод сохранить
+    //MARK: - Public
+    
+    func add(_ word: WordModel) {
+        
+        var words = retrieve() // получаем массив слов из архивера
+        words.append(word) // добавление в массив слов новое слово
+        save(words) // сохранение массив слов в архивер
+    }
+    
+    func save(_ words: [WordModel]) { //метод сохранить
         
         do {
             let data = try encoder.encode(words)
@@ -23,18 +41,21 @@ final class WordsArchiver {
         } catch {
             print(error)
         }
+        
     }
     //retrieve - получить данные
-    func retrieve() -> [Word] {  //метод получить
+    func retrieve() -> [WordModel] {  //метод получить
         
         guard let data = UserDefaults.standard.data(forKey: key) else { return [] }
         do {
             
-            let array = try decoder.decode([Word].self, from: data)
+            let array = try decoder.decode([WordModel].self, from: data)
             return array
         } catch {
             print(error)
         }
         return []
     }
+    
+    
 }

@@ -9,7 +9,7 @@ import Foundation
 
 
 /// Модель при парсинге json
-struct Word: Codable {
+struct Word: Codable{
     let id: Int
     let word: String
     let translate: String
@@ -17,7 +17,7 @@ struct Word: Codable {
 }
 
 /// Модель для отображения
-struct WordModel {
+struct WordModel: Codable  {
     var word: String
     var correct: String
     var variants: [String]

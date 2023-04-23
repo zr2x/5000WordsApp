@@ -9,14 +9,15 @@ import UIKit
 import SnapKit
 
 
-class MainViewController: UIViewController{
+class GameViewController: UIViewController {
     
     let questionService = QuestionService()
+    let allWordsArchiver = WordsArchiver(type: .all)
+    let knownWordsArchiver = WordsArchiver(type: .known)
+    let unknownWordsArchiver = WordsArchiver(type: .unknown)
     var currentWord: WordModel?
-    let defaults = UserDefaults.standard
     
     //Configure UI Control
-    
     let mainStackView : UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -164,16 +165,23 @@ class MainViewController: UIViewController{
 
         var correct = currentWord?.correct
 
+        //1
         if sender.currentTitle == correct {
             sender.backgroundColor = .green
-            //FIXME: force unwrap
-            questionService.correctAnswers.append(sender.currentTitle ?? "")
-            defaults.set(questionService.correctAnswers, forKey: "correct")
-        } else {
+            //questionService.correctAnswers.append(sender.currentTitle ?? "")
+            //defaults.set(questionService.correctAnswers, forKey: "correct")
+            if let word = currentWord {
+                knownWordsArchiver.add(word)
+                print(knownWordsArchiver.retrieve())
+            }
+        } else { //2
             sender.backgroundColor = .red
-            questionService.wrongAnswers.append(sender.currentTitle ?? "")
-            defaults.set(questionService.wrongAnswers, forKey: "wrong")
-          
+            //questionService.wrongAnswers.append(sender.currentTitle ?? "")
+            //defaults.set(questionService.wrongAnswers, forKey: "wrong")
+            if let word = currentWord {
+                unknownWordsArchiver.add(word)
+                print(unknownWordsArchiver.retrieve())
+            }
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

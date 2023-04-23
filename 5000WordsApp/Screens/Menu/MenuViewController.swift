@@ -65,7 +65,7 @@ class MenuViewController: UIViewController {
     }
 
     @objc private func startGameSelector() {
-        present(MainViewController(), animated: true)
+        present(GameViewController(), animated: true)
     }
     
     @objc private func vocabularySelector() {
