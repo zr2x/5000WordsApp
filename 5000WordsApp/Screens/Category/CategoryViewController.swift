@@ -9,7 +9,7 @@ import UIKit
 
 class CategoryViewController: UIViewController {
     
-    private let itemsInfoArray = [["20 случайных", "50 случайных", "все вопросы"], ["Массивы", "Словарь"], ["Функции"]]
+//    private let itemsInfoArray = [["20 случайных", "50 случайных", "все вопросы"], ["Массивы", "Словарь"], ["Функции"]]
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -50,7 +50,8 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemsInfoArray.count
+//        return itemsInfoArray.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,9 +59,9 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryCell.reuseId, for: indexPath) as? CategoryCell else { return UITableViewCell.init() }
         
         
-        let items = itemsInfoArray[indexPath.row]
+//        let items = itemsInfoArray[indexPath.row]
         
-        cell.update(categories: items)
+//        cell.update(categories: items)
         //        cell.textLabel?.text = itemsInfoArray[indexPath.row]
         return cell
     }

@@ -80,15 +80,7 @@ class GameViewController: UIViewController {
         label.heightAnchor.constraint(equalToConstant: 70).isActive = true
         return label
     }()
-    
-    let backToMenuButton: UIButton = {
-        let button = UIButton()
-        button.imageView?.image = UIImage(systemName: "arrowshape.turn.up.backward.circle")
-        button.tintColor = .lightGray
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -146,7 +138,6 @@ class GameViewController: UIViewController {
         let button = UIButton()
         button.setTitle(text, for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemCyan
         button.layer.cornerRadius = 10
         button.heightAnchor.constraint(equalToConstant: 25).isActive = true
@@ -163,22 +154,20 @@ class GameViewController: UIViewController {
             }
         }
 
-        var correct = currentWord?.correct
+        let correct = currentWord?.correct
 
         //1
         if sender.currentTitle == correct {
             sender.backgroundColor = .green
-            //questionService.correctAnswers.append(sender.currentTitle ?? "")
-            //defaults.set(questionService.correctAnswers, forKey: "correct")
             if let word = currentWord {
+                allWordsArchiver.remove(word)
                 knownWordsArchiver.add(word)
                 print(knownWordsArchiver.retrieve())
             }
         } else { //2
             sender.backgroundColor = .red
-            //questionService.wrongAnswers.append(sender.currentTitle ?? "")
-            //defaults.set(questionService.wrongAnswers, forKey: "wrong")
             if let word = currentWord {
+                allWordsArchiver.remove(word)
                 unknownWordsArchiver.add(word)
                 print(unknownWordsArchiver.retrieve())
             }
@@ -188,16 +177,5 @@ class GameViewController: UIViewController {
             self.currentWord = self.questionService.nextQuestion()
             self.updateViews()
         }
-    }
-    
-    func back(sender: UIButton) {
-        if sender == backToMenuButton {
-            backToMenuButton.addTarget(self, action: #selector(backMenuSelector), for: .touchUpInside)
-        }
-    }
-    
-    @objc private func backMenuSelector() {
-        let progressVC = ProgressViewController()
-        present(progressVC, animated: true)
     }
 }
