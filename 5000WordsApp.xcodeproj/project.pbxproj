@@ -21,11 +21,18 @@
 		C050EA7529DB1F0E00568FB0 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050EA7429DB1F0E00568FB0 /* WordCell.swift */; };
 		C0589D4629E44A5F007E995E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0589D4529E44A5F007E995E /* MenuViewController.swift */; };
 		C0589D4B29E5484B007E995E /* WordArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0589D4A29E5484B007E995E /* WordArchiver.swift */; };
+		C0863EA029F67EF900D0192C /* studying.json in Resources */ = {isa = PBXBuildFile; fileRef = C0863E9F29F67EF900D0192C /* studying.json */; };
+		C0863EA229F9688300D0192C /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0863EA129F9688300D0192C /* Factory.swift */; };
+		C08C0C3029FE9DEB007420B2 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C0C2F29FE9DEB007420B2 /* LevelsViewController.swift */; };
+		C08C0C3229FE9EF6007420B2 /* LevelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C0C3129FE9EF6007420B2 /* LevelsTableViewCell.swift */; };
+		C08C0C342A02DDBC007420B2 /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C0C332A02DDBC007420B2 /* HeaderTableView.swift */; };
 		C0BDEE8A29AF751A0083B8BD /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDEE8929AF751A0083B8BD /* JsonLoader.swift */; };
 		C0BDEE8E29AF75980083B8BD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDEE8D29AF75980083B8BD /* Model.swift */; };
 		C0BDEE9029AF76AC0083B8BD /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = C0BDEE8F29AF76AC0083B8BD /* words.json */; };
 		C0BDEE9729B723B80083B8BD /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDEE9629B723B80083B8BD /* QuestionService.swift */; };
 		C0D4E74729E55529009134DD /* SegmentComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4E74629E55529009134DD /* SegmentComponentView.swift */; };
+		C0FF9FB229F54B2900773C1A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF9FB129F54B2900773C1A /* SplashViewController.swift */; };
+		C0FF9FB529F54B4900773C1A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C0FF9FB429F54B4900773C1A /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,11 +51,17 @@
 		C050EA7429DB1F0E00568FB0 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		C0589D4529E44A5F007E995E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C0589D4A29E5484B007E995E /* WordArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordArchiver.swift; sourceTree = "<group>"; };
+		C0863E9F29F67EF900D0192C /* studying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = studying.json; sourceTree = "<group>"; };
+		C0863EA129F9688300D0192C /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		C08C0C2F29FE9DEB007420B2 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
+		C08C0C3129FE9EF6007420B2 /* LevelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsTableViewCell.swift; sourceTree = "<group>"; };
+		C08C0C332A02DDBC007420B2 /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
 		C0BDEE8929AF751A0083B8BD /* JsonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
 		C0BDEE8D29AF75980083B8BD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C0BDEE8F29AF76AC0083B8BD /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		C0BDEE9629B723B80083B8BD /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		C0D4E74629E55529009134DD /* SegmentComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentComponentView.swift; sourceTree = "<group>"; };
+		C0FF9FB129F54B2900773C1A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02973E7299B660F0089526E /* SnapKit in Frameworks */,
+				C0FF9FB529F54B4900773C1A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +96,7 @@
 		C02973CF299B61990089526E /* 5000WordsApp */ = {
 			isa = PBXGroup;
 			children = (
+				C0863EA129F9688300D0192C /* Factory.swift */,
 				C0BDEE9129B7224A0083B8BD /* App */,
 				C0BDEE9229B722580083B8BD /* Screens */,
 				C0BDEE9329B7226E0083B8BD /* Services */,
@@ -109,6 +124,16 @@
 			path = Progress;
 			sourceTree = "<group>";
 		};
+		C08C0C2C29FE9C7A007420B2 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				C08C0C2F29FE9DEB007420B2 /* LevelsViewController.swift */,
+				C08C0C3129FE9EF6007420B2 /* LevelsTableViewCell.swift */,
+				C08C0C332A02DDBC007420B2 /* HeaderTableView.swift */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
 		C0BDEE9129B7224A0083B8BD /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,10 +146,12 @@
 		C0BDEE9229B722580083B8BD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C0FF9FB029F54A7100773C1A /* Splash */,
+				C0589D4929E44AF7007E995E /* Menu */,
+				C08C0C2C29FE9C7A007420B2 /* Levels */,
 				C0663ADC29D9CC0E006517C6 /* Progress */,
 				C0BDEE9829C304110083B8BD /* Category */,
 				C0BDEE9929C3042A0083B8BD /* Game */,
-				C0589D4929E44AF7007E995E /* Menu */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -150,6 +177,7 @@
 		C0BDEE9529B722860083B8BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C0863E9F29F67EF900D0192C /* studying.json */,
 				C0BDEE8F29AF76AC0083B8BD /* words.json */,
 				C02973D6299B61990089526E /* Main.storyboard */,
 				C02973D9299B619A0089526E /* Assets.xcassets */,
@@ -162,8 +190,8 @@
 		C0BDEE9829C304110083B8BD /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				C02973EE299B74BB0089526E /* CategoryCell.swift */,
 				C02973EC299B73A40089526E /* CategoryViewController.swift */,
+				C02973EE299B74BB0089526E /* CategoryCell.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -175,6 +203,14 @@
 				C044484229DC21B20004F2CF /* MainTabBarController.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		C0FF9FB029F54A7100773C1A /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				C0FF9FB129F54B2900773C1A /* SplashViewController.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +231,7 @@
 			name = 5000WordsApp;
 			packageProductDependencies = (
 				C02973E6299B660F0089526E /* SnapKit */,
+				C0FF9FB429F54B4900773C1A /* Lottie */,
 			);
 			productName = 5000WordsApp;
 			productReference = C02973CD299B61990089526E /* 5000WordsApp.app */;
@@ -226,6 +263,7 @@
 			mainGroup = C02973C4299B61990089526E;
 			packageReferences = (
 				C02973E5299B660F0089526E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C0FF9FB329F54B4900773C1A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = C02973CE299B61990089526E /* Products */;
 			projectDirPath = "";
@@ -244,6 +282,7 @@
 				C02973DD299B619A0089526E /* LaunchScreen.storyboard in Resources */,
 				C02973DA299B619A0089526E /* Assets.xcassets in Resources */,
 				C0BDEE9029AF76AC0083B8BD /* words.json in Resources */,
+				C0863EA029F67EF900D0192C /* studying.json in Resources */,
 				C02973D8299B61990089526E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0863EA229F9688300D0192C /* Factory.swift in Sources */,
 				C0BDEE8E29AF75980083B8BD /* Model.swift in Sources */,
 				C0BDEE9729B723B80083B8BD /* QuestionService.swift in Sources */,
 				C044484329DC21B20004F2CF /* MainTabBarController.swift in Sources */,
@@ -266,8 +306,12 @@
 				C0589D4B29E5484B007E995E /* WordArchiver.swift in Sources */,
 				C0589D4629E44A5F007E995E /* MenuViewController.swift in Sources */,
 				C050EA7529DB1F0E00568FB0 /* WordCell.swift in Sources */,
+				C08C0C3029FE9DEB007420B2 /* LevelsViewController.swift in Sources */,
 				C050EA7329DB049000568FB0 /* ProgressViewController.swift in Sources */,
+				C08C0C342A02DDBC007420B2 /* HeaderTableView.swift in Sources */,
 				C0BDEE8A29AF751A0083B8BD /* JsonLoader.swift in Sources */,
+				C0FF9FB229F54B2900773C1A /* SplashViewController.swift in Sources */,
+				C08C0C3229FE9EF6007420B2 /* LevelsTableViewCell.swift in Sources */,
 				C02973EF299B74BB0089526E /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +540,14 @@
 				kind = branch;
 			};
 		};
+		C0FF9FB329F54B4900773C1A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -503,6 +555,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C02973E5299B660F0089526E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		C0FF9FB429F54B4900773C1A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0FF9FB329F54B4900773C1A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

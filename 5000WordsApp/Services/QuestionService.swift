@@ -14,9 +14,6 @@ class QuestionService {
     private var jsonLoader = JsonLoader()
     
     var allWordsArchiver = WordsArchiver(type: .all)
-    
-    //var correctAnswers: [String] = []
-    //var wrongAnswers: [String] = []
 
     func fetchQuestions(jsonName: String)  {
         
@@ -24,7 +21,8 @@ class QuestionService {
         
         if words.isEmpty {
             let words: [Word] = jsonLoader.loadJson(filename: jsonName) ?? []
-            let allWords: [WordModel] = convert(words)
+            let shuffledWords = words.shuffled()
+            let allWords: [WordModel] = convert(shuffledWords)
             self.allWords = allWords
             allWordsArchiver.save(allWords)
         } else {
@@ -41,7 +39,14 @@ class QuestionService {
         for word in allWords {
             
             //allWords.shuffle()
-            var variants = Array(allWords.prefix(3)).map { $0.translate } //
+            
+            let index1 = Int.random(in: 0..<allWords.count)
+            let index2 = Int.random(in: 0..<allWords.count)
+            let index3 = Int.random(in: 0..<allWords.count)
+            
+            var randomWords = [allWords[index1], allWords[index2], allWords[index3]]
+            
+            var variants = randomWords.map { $0.translate } //
             variants.append(word.translate)
             variants.shuffle()
             

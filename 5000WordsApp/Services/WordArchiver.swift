@@ -57,5 +57,10 @@ final class WordsArchiver {
         return []
     }
     
-    
+    func remove(_ word: WordModel) {
+        
+        var allWords = self.retrieve()
+        allWords.removeAll { $0.id == word.id }
+        self.save(allWords)
+    }
 }

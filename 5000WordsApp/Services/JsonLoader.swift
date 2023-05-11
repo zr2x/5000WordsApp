@@ -7,10 +7,6 @@
 
 import Foundation
 
-//protocol JsonService {
-//    func loadJson(filename fileName: String) -> [Language]?
-//}
-
 class JsonLoader {
 
     func loadJson(filename fileName: String) -> [Word]? {

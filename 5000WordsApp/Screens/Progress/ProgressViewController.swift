@@ -20,7 +20,6 @@ class ProgressViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .lightGray
         tableView.register(WordCell.self, forCellReuseIdentifier: WordCell.reuseId)
         tableView.dataSource = self
         tableView.delegate = self
@@ -51,8 +50,14 @@ class ProgressViewController: UIViewController {
         
         
         questionService.fetchQuestions(jsonName: "words")
-        //words = questionService.allWords.shuffled()
-        //tableView.reloadData()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.segmentComponentView.segment.selectedSegmentIndex = 0
+            self.words = self.wordsArchiver.retrieve()
+            self.tableView.reloadData()
+        }
+        
+
     }
     
     private func setupViews() {
@@ -83,8 +88,6 @@ extension ProgressViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WordCell.reuseId, for: indexPath) as? WordCell else { return UITableViewCell() }
-        
-        cell.backgroundColor = .lightGray
         
         let word = words[indexPath.row]
         cell.update(word)
