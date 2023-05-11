@@ -16,8 +16,8 @@ class LevelsViewController: UIViewController {
 //                            "B2 (Upper-intermediate)": 4000,
 //                            "C1 (Advanced)": 8000,
 //                            "C2 (Proficiency)": 16000]
-    let levelLanguage = ["A1 (Elementary)", "A2 (Pre-intermediate)", "B1 (Intermediate)", "B2 (Upper-intermediate)", "C1 (Advanced)",  "C2 (Proficiency)"]
-    let quantityWords = ["500", "1000", "2000", "4000", "8000", "16000"]
+    let levelLanguage = ["Уровень знания языка", "A1 (Elementary)", "A2 (Pre-intermediate)", "B1 (Intermediate)", "B2 (Upper-intermediate)", "C1 (Advanced)",  "C2 (Proficiency)"]
+    let quantityWords = ["Количество слов", "500", "1000", "2000", "4000", "8000", "16000"]
     
     let buttonImage = UIImage(systemName: "questionmark.circle.fill")
     
@@ -32,6 +32,7 @@ class LevelsViewController: UIViewController {
         tableView.backgroundColor = .yellow
         tableView.register(LevelsTableViewCell.self, forCellReuseIdentifier: LevelsTableViewCell.reuseId)
         tableView.register(HeaderTableView.self, forHeaderFooterViewReuseIdentifier: HeaderTableView.headerReuseId)
+        tableView.sectionHeaderTopPadding = 0
         return tableView
     }()
     
@@ -62,7 +63,7 @@ class LevelsViewController: UIViewController {
         tableView.frame = view.bounds
         
         infoButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(33)
+            make.top.equalToSuperview().inset(15)
             make.width.equalTo(30)
             make.right.equalToSuperview().inset(120)
         }
@@ -100,7 +101,7 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
         
         let language = levelLanguage[indexPath.row].padding(toLength: 20, withPad: " ", startingAt: 0)
         let wordsCount = quantityWords[indexPath.row].padding(toLength: 20, withPad: " ", startingAt: 0)
-        cell.textLabel?.text = "\(language)\t\t\t\t\t\t\(wordsCount)"
+        cell.textLabel?.text = "\(language)\t\t\t\(wordsCount)"
 
     
         return cell
@@ -111,6 +112,7 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
         return 60
     }
     
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width - 20, height: 50))
         header.backgroundColor = .systemCyan
@@ -118,6 +120,7 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
         label.text = "Что такое уровни"
         label.textAlignment = .center
         header.addSubview(label)
+        
         return header
     }
 }
