@@ -10,12 +10,6 @@ import SnapKit
 
 class LevelsViewController: UIViewController {
     
-//    let levelsDictionary = ["A1 (Elementary)": 500,
-//                            "A2 (Pre-intermediate)": 1000,
-//                            "B1 (Intermediate)": 2000,
-//                            "B2 (Upper-intermediate)": 4000,
-//                            "C1 (Advanced)": 8000,
-//                            "C2 (Proficiency)": 16000]
     let levelLanguage = ["Уровень знания языка", "A1 (Elementary)", "A2 (Pre-intermediate)", "B1 (Intermediate)", "B2 (Upper-intermediate)", "C1 (Advanced)",  "C2 (Proficiency)"]
     let quantityWords = ["Количество слов", "500", "1000", "2000", "4000", "8000", "16000"]
     

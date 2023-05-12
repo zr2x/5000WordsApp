@@ -48,7 +48,6 @@ class ProgressViewController: UIViewController {
             self.tableView.reloadData()
         }
         
-        
         questionService.fetchQuestions(jsonName: "words")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -56,8 +55,6 @@ class ProgressViewController: UIViewController {
             self.words = self.wordsArchiver.retrieve()
             self.tableView.reloadData()
         }
-        
-
     }
     
     private func setupViews() {

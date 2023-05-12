@@ -72,7 +72,6 @@ class SegmentComponentView: UIView {
     }
     
     @objc private func segmentChanged(sender: UISegmentedControl) {
-
         onAction?(sender.selectedSegmentIndex)
     }
 }
