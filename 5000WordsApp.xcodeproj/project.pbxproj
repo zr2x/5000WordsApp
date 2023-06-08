@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		C050EA7529DB1F0E00568FB0 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050EA7429DB1F0E00568FB0 /* WordCell.swift */; };
 		C0589D4629E44A5F007E995E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0589D4529E44A5F007E995E /* MenuViewController.swift */; };
 		C0589D4B29E5484B007E995E /* WordArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0589D4A29E5484B007E995E /* WordArchiver.swift */; };
+		C06558622A0CD0AF00DC4737 /* ProgressComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06558612A0CD0AF00DC4737 /* ProgressComponentView.swift */; };
 		C0863EA029F67EF900D0192C /* studying.json in Resources */ = {isa = PBXBuildFile; fileRef = C0863E9F29F67EF900D0192C /* studying.json */; };
 		C0863EA229F9688300D0192C /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0863EA129F9688300D0192C /* Factory.swift */; };
 		C08C0C3029FE9DEB007420B2 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C0C2F29FE9DEB007420B2 /* LevelsViewController.swift */; };
@@ -51,6 +52,7 @@
 		C050EA7429DB1F0E00568FB0 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		C0589D4529E44A5F007E995E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C0589D4A29E5484B007E995E /* WordArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordArchiver.swift; sourceTree = "<group>"; };
+		C06558612A0CD0AF00DC4737 /* ProgressComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressComponentView.swift; sourceTree = "<group>"; };
 		C0863E9F29F67EF900D0192C /* studying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = studying.json; sourceTree = "<group>"; };
 		C0863EA129F9688300D0192C /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		C08C0C2F29FE9DEB007420B2 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				C0589D4529E44A5F007E995E /* MenuViewController.swift */,
+				C06558612A0CD0AF00DC4737 /* ProgressComponentView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -253,7 +256,7 @@
 				};
 			};
 			buildConfigurationList = C02973C8299B61990089526E /* Build configuration list for PBXProject "5000WordsApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -311,6 +314,7 @@
 				C08C0C342A02DDBC007420B2 /* HeaderTableView.swift in Sources */,
 				C0BDEE8A29AF751A0083B8BD /* JsonLoader.swift in Sources */,
 				C0FF9FB229F54B2900773C1A /* SplashViewController.swift in Sources */,
+				C06558622A0CD0AF00DC4737 /* ProgressComponentView.swift in Sources */,
 				C08C0C3229FE9EF6007420B2 /* LevelsTableViewCell.swift in Sources */,
 				C02973EF299B74BB0089526E /* CategoryCell.swift in Sources */,
 			);

@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        window?.rootViewController = MainTabBarController.init()
         window?.rootViewController = SplashViewController.init()
+//        window?.rootViewController = MenuViewController()
         window?.makeKeyAndVisible()
     }
 

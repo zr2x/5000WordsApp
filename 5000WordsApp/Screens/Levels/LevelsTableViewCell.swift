@@ -15,8 +15,6 @@ class LevelsTableViewCell: UITableViewCell {
     
     private lazy var leveLabel: UILabel = {
         let label = UILabel()
-//        label.textColor = .black
-//        label.tintColor = .yellow
         return label
     }()
     
@@ -24,8 +22,7 @@ class LevelsTableViewCell: UITableViewCell {
     
     //MARK: Setup cell
     private func setupCell() {
-        
-        
+
     }
 
 }

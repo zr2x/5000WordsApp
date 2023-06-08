@@ -43,8 +43,6 @@ class SegmentComponentView: UIView {
         super.init(frame: frame)
         setupViews()
         setupConstraints()
-        
-        //updateCounters()
     }
     
     required init?(coder: NSCoder) {
@@ -74,7 +72,6 @@ class SegmentComponentView: UIView {
     }
     
     @objc private func segmentChanged(sender: UISegmentedControl) {
-
         onAction?(sender.selectedSegmentIndex)
     }
 }
